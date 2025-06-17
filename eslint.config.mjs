@@ -1,9 +1,10 @@
-import { globalIgnores } from 'eslint/config'
-import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
-import pluginVue from 'eslint-plugin-vue'
+import { globalIgnores } from 'eslint/config';
+import prettierPlugin from 'eslint-plugin-prettier';
+import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
+import pluginVue from 'eslint-plugin-vue';
 
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting';
+import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript';
 
 export default defineConfigWithVueTs(
   {
@@ -14,6 +15,14 @@ export default defineConfigWithVueTs(
   pluginVue.configs['flat/recommended'],
   vueTsConfigs.recommended,
   skipFormatting,
+  {
+    plugins: {
+      prettier: prettierPlugin,
+    },
+    rules: {
+      'prettier/prettier': 'error',
+    },
+  },
   {
     plugins: {
       'simple-import-sort': simpleImportSortPlugin,
@@ -46,4 +55,4 @@ export default defineConfigWithVueTs(
       ],
     },
   },
-)
+);
