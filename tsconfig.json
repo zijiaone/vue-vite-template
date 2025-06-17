@@ -1,11 +1,14 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
     },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ]
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "vite.config.*", "eslint.config.*"],
+  "exclude": ["node_modules", "dist"]
 }
