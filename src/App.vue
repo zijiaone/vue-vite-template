@@ -26,15 +26,15 @@ import HelloWorld from './components/HelloWorld.vue';
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 header {
   max-height: 100vh;
   line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+  .logo {
+    display: block;
+    margin: 0 auto 2rem;
+  }
 }
 
 nav {
@@ -42,24 +42,24 @@ nav {
   margin-top: 2rem;
   font-size: 12px;
   text-align: center;
-}
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
+  a.router-link-exact-active {
+    color: var(--color-text);
+  }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
+  a.router-link-exact-active:hover {
+    background-color: transparent;
+  }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
+  a {
+    display: inline-block;
+    padding: 0 1rem;
+    border-left: 1px solid var(--color-border);
+  }
 
-nav a:first-of-type {
-  border: 0;
+  a:first-of-type {
+    border: 0;
+  }
 }
 
 @media (width >= 1024px) {
@@ -67,24 +67,24 @@ nav a:first-of-type {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+    .logo {
+      margin: 0 2rem 0 0;
+    }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+    .wrapper {
+      display: flex;
+      place-items: flex-start;
+      flex-wrap: wrap;
+    }
 
-  nav {
-    padding: 1rem 0;
-    margin-top: 1rem;
-    margin-left: -1rem;
-    font-size: 1rem;
-    text-align: left;
+    nav {
+      padding: 1rem 0;
+      margin-top: 1rem;
+      margin-left: -1rem;
+      font-size: 1rem;
+      text-align: left;
+    }
   }
 }
 </style>

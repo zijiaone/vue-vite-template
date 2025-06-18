@@ -178,5 +178,9 @@ module.exports = {
       files: ['*.html', '*.vue', './**/*.vue'],
       customSyntax: 'postcss-html',
     },
+    {
+      files: ['*.less', './**/*.less'],
+      customSyntax: 'postcss-less',
+    },
   ],
 };
