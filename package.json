@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc --build && vite build",
     "preview": "vite preview",
+    "prepare": "npx simple-git-hooks",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
@@ -19,11 +20,13 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^19.8.1",
     "@types/node": "^22.15.21",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.5.0",
     "@vue/tsconfig": "^0.7.0",
+    "commitlint": "^19.8.1",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
@@ -44,7 +47,8 @@
     "vue-tsc": "^2.2.10"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx commitlint --edit $1"
   },
   "lint-staged": {
     "*.{css,less,vue}": "stylelint --fix",
