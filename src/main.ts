@@ -1,7 +1,7 @@
 import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 
-import './assets/main.less';
+import './styles/base.less';
 
 import App from './App.vue';
 import router from './router';
