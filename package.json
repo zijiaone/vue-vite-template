@@ -47,11 +47,10 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*.{css,less}": "stylelint --fix",
-    "*.{js,ts,tsx,vue}": [
+    "*.{css,less,vue}": "stylelint --fix",
+    "*.{js,ts,vue}": [
       "eslint --fix",
-      "prettier --write",
-      "stylelint --fix"
+      "prettier --write"
     ]
   },
   "engines": {

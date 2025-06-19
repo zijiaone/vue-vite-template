@@ -3,8 +3,9 @@ module.exports = {
   plugins: ['stylelint-order'],
   rules: {
     'import-notation': 'string',
-    'selector-class-pattern': '^[a-z][a-z0-9_-]+$',
     'no-descending-specificity': null,
+    'media-feature-range-notation': 'prefix',
+    'selector-class-pattern': '^[a-z][a-z0-9_-]+$',
     'selector-pseudo-class-no-unknown': [
       true,
       {
