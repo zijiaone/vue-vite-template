@@ -8,7 +8,9 @@ import router from './router';
 
 const app = createApp(App);
 
-app.use(createPinia());
+const piniaInstance = createPinia();
+app.use(piniaInstance);
+
 app.use(router);
 
 app.mount('#app');
