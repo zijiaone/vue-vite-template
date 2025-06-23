@@ -6,7 +6,7 @@
     "source.fixAll": "explicit"
   },
   "eslint.enable": true,
-  "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+  "eslint.validate": ["javascript", "typescript", "html", "vue"],
   "stylelint.enable": true,
   "stylelint.validate": ["css", "less", "postcss", "scss", "sass", "vue"]
 }
