@@ -15,6 +15,7 @@ import HelloWorld from './components/HelloWorld.vue';
       <HelloWorld msg="You did it!" />
     </div>
   </header>
+  <router-view />
 </template>
 
 <style lang="less" scoped>
