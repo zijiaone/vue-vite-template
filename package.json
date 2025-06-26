@@ -12,10 +12,11 @@
     "lint": "run-s lint:*",
     "lint:lint-staged": "lint-staged",
     "lint:script": "eslint . --fix",
-    "lint:style": "stylelint **/*.{html,vue,css,less} --fix",
+    "lint:style": "stylelint src/**/*.{html,css,vue,less} --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "axios": "^1.9.0",
     "pinia": "^3.0.2",
     "vue": "^3.5.14",
     "vue-i18n": "^11.1.5",
