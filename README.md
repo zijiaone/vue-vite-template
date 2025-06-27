@@ -109,8 +109,14 @@ chore: update dependencies
 项目使用 ESLint、Prettier 和 Stylelint 进行代码规范和格式化，确保代码风格的一致性。在提交代码前，请确保代码已经过相关工具的检查和格式化。
 
 ```sh
-# 运行 ESLint 检查
+# 运行所有代码检查
 npm run lint
+
+# 仅检查样式文件
+npm run lint:style
+
+# 仅检查脚本文件
+npm run lint:script
 
 # 运行 Prettier 格式化
 npm run format
