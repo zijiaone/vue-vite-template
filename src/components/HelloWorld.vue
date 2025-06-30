@@ -5,15 +5,15 @@
       You’ve successfully created a project with
       <a
         href="https://vite.dev/"
-        target="_blank"
-        rel="noopener">
+        rel="noopener"
+        target="_blank">
         Vite
       </a>
       +
       <a
         href="https://vuejs.org/"
-        target="_blank"
-        rel="noopener">
+        rel="noopener"
+        target="_blank">
         Vue 3
       </a>
       . What's next?

@@ -3,15 +3,15 @@
     <img
       alt="Vue logo"
       class="logo"
+      height="125"
       src="@/assets/logo.svg"
-      width="125"
-      height="125" />
+      width="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
     </div>
   </header>
-  <router-view />
+  <RouterView />
 </template>
 
 <script setup lang="ts">
