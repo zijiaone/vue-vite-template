@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
-</script>
-
 <template>
   <header>
     <img
@@ -17,6 +13,10 @@ import HelloWorld from './components/HelloWorld.vue';
   </header>
   <router-view />
 </template>
+
+<script setup lang="ts">
+import HelloWorld from './components/HelloWorld.vue';
+</script>
 
 <style lang="less" scoped>
 header {
