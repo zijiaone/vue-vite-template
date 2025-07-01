@@ -17,16 +17,7 @@
     // 禁止 switch 语句中 case 没有 break 导致的“穿透”行为，提升代码安全性。
     "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "env.d.ts",
-    "src/**/*",
-    "src/**/*.vue",
-    "vite.config.*",
-    "eslint.config.*"
-  ],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "vite.config.*", "eslint.config.*"],
 
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "exclude": ["node_modules", "dist"]
 }
