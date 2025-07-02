@@ -13,6 +13,4 @@ const i18n = createI18n({
   },
 });
 
-export const { t, locale } = i18n.global;
-
 export default i18n;

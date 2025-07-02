@@ -1,10 +1,9 @@
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
     <h3>
-      You’ve successfully created a project with
+      前端标准化模板项目，基于
       <a
-        href="https://vite.dev/"
+        href="https://vitejs.dev/"
         rel="noopener"
         target="_blank">
         Vite
@@ -16,39 +15,26 @@
         target="_blank">
         Vue 3
       </a>
-      . What's next?
+      构建，开箱即用。
     </h3>
   </div>
 </template>
 
-<script setup lang="ts">
-defineProps<{
-  msg: string;
-}>();
-</script>
+<script setup lang="ts"></script>
 
-<style scoped>
-h1 {
-  position: relative;
-  top: -10px;
-  font-size: 2.6rem;
-  font-weight: 500;
-}
+<style lang="less" scoped>
+.greetings {
+  h3 {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
 
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-a,
-.green {
-  padding: 3px;
-  color: hsl(160deg 100% 37% / 100%);
-  text-decoration: none;
-  transition: 0.4s;
+  a {
+    padding: 3px;
+    color: hsl(160deg 100% 37% / 100%);
+    text-decoration: none;
+    transition: 0.4s;
+  }
 }
 </style>
