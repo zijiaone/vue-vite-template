@@ -18,6 +18,19 @@ export function getUserInfo() {
 }
 
 /**
+ * 创建新用户
+ * @param userData 用户数据
+ * @returns 创建的用户信息
+ */
+export function createUser(userData: Omit<UserInfo, 'id'>) {
+  return http.post<UserInfo>('/api/user/create', userData, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+}
+
+/**
  * 更新用户信息
  * @param id 用户ID
  * @param data 用户数据
