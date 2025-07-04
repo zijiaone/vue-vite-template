@@ -24,7 +24,8 @@ type HttpMethod = <T = unknown, P = Record<string, unknown>>(...args: RequestPar
  */
 type HttpClient = {
   request: <T = unknown>(config: RequestConfig) => Promise<T>;
-  [key: string]: HttpMethod | (<T = unknown>(config: RequestConfig) => Promise<T>);
+} & {
+  [K in (typeof methodList)[number]]: HttpMethod;
 };
 
 /**

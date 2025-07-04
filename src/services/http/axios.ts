@@ -1,20 +1,16 @@
-import axios, { type AxiosError, type AxiosInstance, type AxiosRequestConfig, type AxiosResponse } from 'axios';
+import axios, {
+  type AxiosError,
+  type AxiosInstance,
+  type AxiosRequestConfig,
+  type AxiosResponse,
+  type InternalAxiosRequestConfig,
+} from 'axios';
 
 /**
  * 请求配置类型
  * 扩展自 AxiosRequestConfig，可以添加自定义配置
  */
 export type RequestConfig = AxiosRequestConfig & {};
-
-/**
- * 定义接口响应数据类型
- * 根据后端接口规范定义，不同项目可能需要调整
- */
-export interface ApiResponse<T = unknown> {
-  code: number;
-  message: string;
-  data: T;
-}
 
 // 创建 axios 实例
 const instance: AxiosInstance = axios.create({
@@ -25,7 +21,7 @@ const instance: AxiosInstance = axios.create({
 
 // 请求拦截器
 instance.interceptors.request.use(
-  (config: RequestConfig) => {
+  (config: InternalAxiosRequestConfig) => {
     // 处理请求前的逻辑，例如添加认证头
     return config;
   },
@@ -38,17 +34,15 @@ instance.interceptors.request.use(
 
 // 响应拦截器
 instance.interceptors.response.use(
-  (response: AxiosResponse<ApiResponse<unknown>>) => {
+  (response: AxiosResponse) => {
     const res = response.data;
-    // 自定义业务状态码处理
+    // 自定义业务状态码处理，根据后端接口规范定义，不同项目可能需要调整
     if (res.code !== 200) {
       // 处理业务逻辑错误
       return Promise.reject(res);
     }
-    // 返回成功响应的data部分
-    return res.data;
+    return res;
   },
-  // 处理HTTP错误
   (error: AxiosError) => {
     // 处理HTTP错误
     handleHttpError(error);
@@ -61,7 +55,7 @@ instance.interceptors.response.use(
  * 根据不同的错误类型和状态码返回错误信息
  * @param error Axios错误对象
  */
-const handleHttpError = (error: AxiosError): string => {
+const handleHttpError = (error: AxiosError) => {
   let message = '网络错误';
   if (error.response) {
     // 服务器返回的错误状态码
@@ -113,9 +107,9 @@ const handleHttpError = (error: AxiosError): string => {
  * @returns Promise<T> 返回请求结果
  */
 export const request = <T = unknown>(config: RequestConfig): Promise<T> => {
-  return instance<AxiosResponse<ApiResponse<T>>>(config)
-    .then((result) => {
-      return result.data;
+  return instance<T>(config)
+    .then((response) => {
+      return response.data;
     })
     .catch((error) => {
       return Promise.reject(error);
