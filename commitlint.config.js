@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   // 忽略某些提交信息不进行校验
   // 这里配置了一个函数：如果提交信息（commit message）中包含 'init'，则跳过校验
   // 比如 "Initial commit" 或 "init: project setup" 将不会被校验

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   // 指定继承的 Stylelint 配置，这里继承了 stylelint-config-standard 的默认规则
   extends: ['stylelint-config-standard'],
   // 指定要使用的 Stylelint 插件，这里使用了 stylelint-order 插件来控制属性顺序
