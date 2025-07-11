@@ -4,10 +4,10 @@
 
 ## ✨ 特性
 
-- 🚀 Vue 3 + Vite + TypeScript - 现代前端开发技术栈
-- 📦 Pinia - 新一代状态管理方案
-- 🌍 Vue I18n - 国际化解决方案
-- 🔌 Axios - 基于 Promise 的 HTTP 客户端
+- 🚀 Vue 3 + Vite + TypeScript
+- 📦 Pinia - 状态管理
+- 🌍 Vue I18n - 国际化
+- 🔌 Axios - 网络请求
 - 🎨 Less - CSS 预处理器
 - 📝 ESLint + Prettier + Stylelint - 代码规范与格式化
 - 🎯 Simple Git Hooks + Commitlint - Git 提交规范
@@ -76,6 +76,7 @@ fix(auth): fix token expired
 ```
 
 常用类型：
+
 - feat: 新功能
 - fix: Bug 修复
 - docs: 文档更新
