@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import './index.less';
+import '@/styles/base.less';
 
 import App from './App.tsx';
 
