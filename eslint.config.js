@@ -1,4 +1,3 @@
-import { globalIgnores } from "eslint/config";
 import importPlugin from "eslint-plugin-import";
 import perfectionist from "eslint-plugin-perfectionist";
 import reactPlugin from "eslint-plugin-react";
