@@ -123,15 +123,6 @@ export default defineConfigWithVueTs(
         },
       ],
       'perfectionist/sort-object-types': ['error'],
-      // 'perfectionist/sort-objects': [
-      //   'error',
-      //   {
-      //     type: 'unsorted',
-      //     useConfigurationIf: {
-      //       callingFunctionNamePattern: '^defineOptions',
-      //     },
-      //   },
-      // ],
     },
     ignores: ['**/**/routes.ts', 'src/stores/*'],
   },
