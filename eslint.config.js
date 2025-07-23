@@ -1,3 +1,5 @@
+import importPlugin from 'eslint-plugin-import';
+import perfectionist from 'eslint-plugin-perfectionist';
 import prettierPlugin from 'eslint-plugin-prettier';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
 import pluginVue from 'eslint-plugin-vue';
@@ -24,6 +26,191 @@ export default defineConfigWithVueTs(
     },
     rules: {
       'prettier/prettier': 'error', // 违反 Prettier 规则时报错
+    },
+  },
+  // 代码格式化插件配置：自动排序和组织代码元素，提高可读性和一致性
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.vue'],
+    plugins: {
+      perfectionist,
+    },
+    rules: {
+      'perfectionist/sort-jsx-props': [
+        'error',
+        {
+          type: 'alphabetical',
+          order: 'asc',
+          ignoreCase: true,
+          specialCharacters: 'keep',
+          ignorePattern: [],
+          partitionByNewLine: false,
+          newlinesBetween: 'ignore',
+          groups: [
+            'DEFINITION',
+            'LIST_RENDERING',
+            'CONDITIONALS',
+            'RENDER_MODIFIERS',
+            'GLOBAL',
+            'UNIQUE',
+            'SLOT',
+            'TWO_WAY_BINDING',
+            'OTHER_DIRECTIVES',
+            'multiline',
+            'unknown',
+            'shorthand',
+            'callback',
+          ],
+          customGroups: {
+            DEFINITION: '^v-is',
+            LIST_RENDERING: '^v-for',
+            CONDITIONALS: '^(v-if|v-else-if|v-else|v-show|v-cloak)',
+            RENDER_MODIFIERS: '^(v-once|v-pre)',
+            GLOBAL: '^id',
+            UNIQUE: '^(ref|key)',
+            SLOT: '^v-slot',
+            TWO_WAY_BINDING: '^v-model',
+            OTHER_DIRECTIVES: '^v-.+',
+            callback: '^on.+',
+          },
+        },
+      ],
+      'perfectionist/sort-array-includes': 'error',
+      'perfectionist/sort-classes': [
+        'error',
+        {
+          type: 'alphabetical',
+          order: 'asc',
+          ignoreCase: true,
+          specialCharacters: 'keep',
+          partitionByComment: false,
+          partitionByNewLine: false,
+          newlinesBetween: 'ignore',
+          ignoreCallbackDependenciesPatterns: [],
+          groups: [
+            'index-signature',
+            ['static-property', 'static-accessor-property'],
+            ['static-get-method', 'static-set-method'],
+            ['protected-static-property', 'protected-static-accessor-property'],
+            ['protected-static-get-method', 'protected-static-set-method'],
+            ['private-static-property', 'private-static-accessor-property'],
+            ['private-static-get-method', 'private-static-set-method'],
+            'static-block',
+            ['static-method', 'static-function-property'],
+            ['protected-static-method', 'protected-static-function-property'],
+            ['private-static-method', 'private-static-function-property'],
+            ['property', 'accessor-property'],
+            ['protected-property', 'protected-accessor-property'],
+            ['protected-get-method', 'protected-set-method'],
+            ['private-property', 'private-accessor-property'],
+            ['private-get-method', 'private-set-method'],
+            'constructor',
+            ['get-method', 'set-method'],
+            ['method', 'function-property'],
+            ['protected-method', 'protected-function-property'],
+            ['private-method', 'private-function-property'],
+            'unknown',
+          ],
+          customGroups: [],
+        },
+      ],
+      'perfectionist/sort-enums': 'error',
+      'perfectionist/sort-intersection-types': 'error',
+      'perfectionist/sort-interfaces': 'error',
+      'perfectionist/sort-named-imports': [
+        'error',
+        {
+          ignoreAlias: true,
+        },
+      ],
+      'perfectionist/sort-object-types': ['error'],
+      // 'perfectionist/sort-objects': [
+      //   'error',
+      //   {
+      //     type: 'unsorted',
+      //     useConfigurationIf: {
+      //       callingFunctionNamePattern: '^defineOptions',
+      //     },
+      //   },
+      // ],
+    },
+    ignores: ['**/**/routes.ts', 'src/stores/*'],
+  },
+  // 格式化 vue router 的配置顺序
+  {
+    plugins: {
+      perfectionist,
+    },
+    files: ['**/**/routes.ts'],
+    rules: {
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          groups: ['path', 'name', 'meta', 'unknown', 'component', 'children'],
+          customGroups: [
+            {
+              groupName: 'path',
+              elementNamePattern: 'path',
+            },
+            {
+              groupName: 'name',
+              elementNamePattern: 'name',
+            },
+            {
+              groupName: 'meta',
+              elementNamePattern: 'meta',
+            },
+            {
+              groupName: 'component',
+              elementNamePattern: 'component',
+            },
+            {
+              groupName: 'children',
+              elementNamePattern: 'children',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  // 格式化 vue store 的配置顺序
+  {
+    plugins: {
+      perfectionist,
+    },
+    files: ['src/stores/*'],
+    rules: {
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          groups: ['state', 'getters', 'actions', 'unknown'],
+          customGroups: [
+            {
+              groupName: 'state',
+              elementNamePattern: 'state',
+            },
+            {
+              groupName: 'getters',
+              elementNamePattern: 'getters',
+            },
+            {
+              groupName: 'actions',
+              elementNamePattern: 'actions',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  // 导入规则配置：规范化模块导入的格式和顺序
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.vue'],
+    plugins: {
+      import: importPlugin,
+    },
+    rules: {
+      'import/first': 'off',
+      'import/newline-after-import': 'error',
+      'import/no-duplicates': 'error',
     },
   },
   // 导入排序插件配置：规范化导入语句的顺序

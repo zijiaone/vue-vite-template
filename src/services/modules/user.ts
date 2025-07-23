@@ -2,10 +2,10 @@ import http from '../http';
 
 // 用户信息类型
 interface UserInfo {
-  id: number;
-  name: string;
   avatar: string;
   email: string;
+  id: number;
+  name: string;
   phone: string;
 }
 

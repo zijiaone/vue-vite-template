@@ -23,9 +23,9 @@ type HttpMethod = <T = unknown, P = Record<string, unknown>>(...args: RequestPar
  * 包含request方法和所有HTTP方法
  */
 type HttpClient = {
-  request: <T = unknown>(config: RequestConfig) => Promise<T>;
-} & {
   [K in (typeof methodList)[number]]: HttpMethod;
+} & {
+  request: <T = unknown>(config: RequestConfig) => Promise<T>;
 };
 
 /**
@@ -37,7 +37,7 @@ const http = methodList.reduce(
     acc[method] = <T = unknown, P = Record<string, unknown>>(...args: RequestParams<P>): Promise<T> => {
       const [url, dataOrParams, config = {}] = args;
       // 根据HTTP方法类型决定参数是放在params还是data中
-      const paramKey = ['get', 'delete', 'head', 'options'].includes(method) ? 'params' : 'data';
+      const paramKey = ['delete', 'get', 'head', 'options'].includes(method) ? 'params' : 'data';
       const reqConfig: RequestConfig = {
         url,
         method: method.toUpperCase(),

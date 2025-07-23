@@ -10,7 +10,7 @@ import axios, {
  * 请求配置类型
  * 扩展自 AxiosRequestConfig，可以添加自定义配置
  */
-export type RequestConfig = AxiosRequestConfig & {};
+export type RequestConfig = {} & AxiosRequestConfig;
 
 // 创建 axios 实例
 const instance: AxiosInstance = axios.create({

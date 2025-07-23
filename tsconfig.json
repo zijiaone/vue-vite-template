@@ -4,6 +4,8 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   // 编译器选项
   "compilerOptions": {
+    // 指定 TypeScript 编译输出的文件路径，用于增量编译优化。
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
     // 设置模块解析的根目录为当前目录（即项目根目录）。
     "baseUrl": ".",
     // 路径映射：将 @ 指向 ./src/ 目录，方便在项目中使用绝对路径导入模块。
@@ -17,7 +19,6 @@
     // 禁止 switch 语句中 case 没有 break 导致的“穿透”行为，提升代码安全性。
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "vite.config.*", "eslint.config.*"],
-
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "vite.config.*"],
   "exclude": ["node_modules", "dist"]
 }
