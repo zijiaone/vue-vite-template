@@ -12,13 +12,7 @@
     "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, .stylelint*, commit*"
   },
   "eslint.enable": true,
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-    "html"
-  ],
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact", "html"],
   "css.validate": false,
   "stylelint.enable": true,
   "stylelint.validate": ["css", "less", "postcss", "scss", "sass"],
