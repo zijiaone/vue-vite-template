@@ -1,4 +1,4 @@
-# Frontend Standard Template
+# Vue3 Vite Template
 
 基于 Vue 3 + Vite 的前端标准化工程模板，集成当前主流的开发工具链和最佳实践。
 
