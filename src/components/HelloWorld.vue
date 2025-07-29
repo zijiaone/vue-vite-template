@@ -1,7 +1,7 @@
 <template>
   <div class="greetings">
     <h3>
-      前端标准化模板项目，基于
+      前端标准化开发模板，基于
       <a
         href="https://vitejs.dev/"
         rel="noopener"
@@ -14,6 +14,13 @@
         rel="noopener"
         target="_blank">
         Vue 3
+      </a>
+      +
+      <a
+        href="https://www.typescriptlang.org/"
+        rel="noopener"
+        target="_blank">
+        TypeScript
       </a>
       构建，开箱即用。
     </h3>
