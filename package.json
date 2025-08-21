@@ -9,7 +9,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "preview": "vite preview",
-    "prepare": "npx simple-git-hooks",
+    "prepare": "node scripts/prepare-hooks.js",
     "lint": "run-s lint:*",
     "lint:lint-staged": "lint-staged",
     "lint:script": "eslint . --fix",

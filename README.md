@@ -31,6 +31,8 @@ npm run dev
 npm run build
 ```
 
+> **注意**：如果在非Git仓库环境中安装了依赖，后续初始化Git仓库后，需要手动执行 `npm run prepare` 命令来设置Git钩子，以启用代码质量检查功能。
+
 ## 📖 开发指南
 
 ### 状态管理
